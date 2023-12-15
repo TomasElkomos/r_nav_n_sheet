@@ -94,7 +94,12 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              [Remix.home_6_fill, Remix.search_2_fill, Remix.shopping_cart_2_fill, Remix.user_3_fill][_index],
+              [
+                Remix.home_6_fill,
+                Remix.search_2_fill,
+                Remix.shopping_cart_2_fill,
+                Remix.user_3_fill
+              ][_index],
               color: theme.colorScheme.secondary,
               size: 48,
             ),
@@ -123,8 +128,8 @@ class _HomePageState extends State<HomePage> {
         },
         initialSelectedIndex: _index,
         sheet: Sheet(),
-        sheetOpenIcon: Remix.menu_4_line,
-        sheetCloseIcon: Remix.add_line,
+        sheetOpenIcon: Icon(Remix.menu_4_line),
+        sheetCloseIcon: Icon(Remix.add_line),
         sheetCloseIconBoxColor: Colors.white,
         sheetCloseIconColor: theme.scaffoldBackgroundColor,
         sheetOpenIconColor: Colors.white,
@@ -135,23 +140,23 @@ class _HomePageState extends State<HomePage> {
         },
         items: const [
           RNavItem(
-            activeIcon: Remix.home_6_fill,
-            icon: Remix.home_6_line,
+            activeIcon: Icon(Remix.home_6_fill),
+            icon: Icon(Remix.home_6_line),
             label: "Home",
           ),
           RNavItem(
-            icon: Remix.search_2_line,
-            activeIcon: Remix.search_2_fill,
+            icon: Icon(Remix.search_2_line),
+            activeIcon: Icon(Remix.search_2_fill),
             label: "Search",
           ),
           RNavItem(
-            icon: Remix.shopping_cart_2_line,
-            activeIcon: Remix.shopping_cart_2_fill,
+            icon: Icon(Remix.shopping_cart_2_line),
+            activeIcon: Icon(Remix.shopping_cart_2_fill),
             label: "Cart",
           ),
           RNavItem(
-            icon: Remix.user_3_line,
-            activeIcon: Remix.user_3_fill,
+            icon: Icon(Remix.user_3_line),
+            activeIcon: Icon(Remix.user_3_fill),
             label: "Account",
           ),
         ],
@@ -253,7 +258,8 @@ class Sheet extends StatelessWidget {
                               widthFactor: 0.33,
                               child: Container(
                                 decoration: BoxDecoration(
-                                    color: (icon["c"] as Color).withOpacity(0.2),
+                                    color:
+                                        (icon["c"] as Color).withOpacity(0.2),
                                     borderRadius: BorderRadius.circular(10)),
                                 margin: const EdgeInsets.all(5),
                                 padding: const EdgeInsets.all(15),

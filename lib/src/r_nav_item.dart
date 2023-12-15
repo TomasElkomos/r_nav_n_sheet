@@ -3,10 +3,10 @@ part of '../r_nav_n_sheet.dart';
 /// [BottomNavigationBarItem] (bottom navigation bar items) for [RNavNSheet]
 class RNavItem {
   /// Icon when item is not selected
-  final IconData icon;
+  final Widget icon;
 
   /// Icon when item is  selected
-  final IconData? activeIcon;
+  final Widget? activeIcon;
 
   /// Label of the item
   final String label;
@@ -19,8 +19,8 @@ class RNavItem {
 }
 
 class _RNavItem extends StatelessWidget {
-  final IconData icon;
-  final IconData? activeIcon;
+  final Widget icon;
+  final Widget? activeIcon;
   final String label;
   final EdgeInsets? padding;
   final bool selected;
@@ -79,11 +79,22 @@ class _RNavItem extends StatelessWidget {
       children: [
         AnimatedSize(
           duration: const Duration(milliseconds: 300),
-          child: Icon(
-            selected && activeIcon != null ? activeIcon : icon,
-            color: color,
-            size: selected ? 24 : 21,
-          ),
+          child: selected && activeIcon != null
+              ? SizedBox(
+                  width: 26,
+                  height: 26,
+                  child: activeIcon,
+                )
+              : SizedBox(
+                  width: 21,
+                  height: 21,
+                  child: icon,
+                ),
+          // Icon(
+          //   selected && activeIcon != null ? activeIcon : icon.icon,
+          //   color: color,
+          //   size: selected ? 24 : 21,
+          // ),
         ),
         const SizedBox(height: 5),
         AnimatedDefaultTextStyle(
